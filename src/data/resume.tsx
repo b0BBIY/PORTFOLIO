@@ -140,17 +140,15 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Chat Collect",
-      href: "https://chatcollect.com",
+      title: "Portfolio",
+      href: "https://portfolio-drab-psi-32.vercel.app/",
       dates: "Jan 2024 - Feb 2024",
       active: true,
       description:
-        "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+        "My personal portfolio website built with Next.js, TailwindCSS, and Shadcn UI.",
       technologies: [
         "Next.js",
         "Typescript",
-        "PostgreSQL",
-        "Prisma",
         "TailwindCSS",
         "Stripe",
         "Shadcn UI",
@@ -159,7 +157,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://chatcollect.com",
+          href: "https://www.lovestoa.com",
           icon: <Icons.globe className="size-3" />,
         },
       ],
