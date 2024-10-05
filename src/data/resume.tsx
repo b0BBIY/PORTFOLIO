@@ -141,7 +141,7 @@ export const DATA = {
   projects: [
     {
       title: "Portfolio",
-      href: "https://portfolio-drab-psi-32.vercel.app/",
+      href: "https://www.lovestoa.com",
       dates: "Jan 2024 - Feb 2024",
       active: true,
       description:
@@ -157,7 +157,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://portfolio-drab-psi-32.vercel.app/",
+          href: "https://www.lovestoa.com",
           icon: <Icons.globe className="size-3" />,
         },
       ],
