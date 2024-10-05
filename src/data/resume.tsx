@@ -162,7 +162,7 @@ export const DATA = {
         },
       ],
       image: "",
-      video: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/2024-10-05%2001-54-56.mp4",
+      video: "https://customer-3sbp98uaj9i5cjhg.cloudflarestream.com/93497d08144f6a76b3b130f82b6c600c/manifest/video.m3u8",
     },
     {
       title: "Magic UI",
@@ -256,7 +256,7 @@ export const DATA = {
       ],
       image: "",
       video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+        "https://pub-[your-bucket-id].r2.dev/automatic-chat.mp4",
     },
   ],
 } as const;
