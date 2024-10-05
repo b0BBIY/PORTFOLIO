@@ -141,7 +141,7 @@ export const DATA = {
   projects: [
     {
       title: "Portfolio",
-     d href: "https://www.lovestoa.com",
+      href: "https://www.lovestoa.com",
       dates: "Jan 2024 - Feb 2024",
       active: true,
       description:
