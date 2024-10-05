@@ -157,7 +157,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://www.lovestoa.com",
+          href: "https://portfolio-drab-psi-32.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
