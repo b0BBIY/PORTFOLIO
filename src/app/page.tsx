@@ -65,7 +65,7 @@ export default function Page() {
                 title={work.company}
                 subtitle={work.title}
                 href={work.href}
-                badges={work.badges as readonly string[] | undefined} // Add this type assertion
+                badges={work.badges} // Remove the type assertion
                 period={`${work.start} - ${work.end ?? "Present"}`}
                 description={work.description}
               />

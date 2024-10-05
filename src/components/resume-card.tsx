@@ -15,7 +15,7 @@ type ResumeCardProps = {
   title: string;
   subtitle: string;
   href: string;
-  badges?: readonly string[]; // Change this line to make badges optional
+  badges?: readonly string[] | undefined; // Make badges optional
   period: string;
   description?: string;
 };
