@@ -9,17 +9,18 @@ import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-interface ResumeCardProps {
+type ResumeCardProps = {
   logoUrl: string;
   altText: string;
   title: string;
-  subtitle?: string;
-  href?: string;
-  badges?: readonly string[];
+  subtitle: string;
+  href: string;
+  badges?: readonly string[]; // Change this line to make badges optional
   period: string;
   description?: string;
-}
-export const ResumeCard = ({
+};
+
+export function ResumeCard({
   logoUrl,
   altText,
   title,
@@ -28,7 +29,7 @@ export const ResumeCard = ({
   badges,
   period,
   description,
-}: ResumeCardProps) => {
+}: ResumeCardProps) {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {

@@ -1,4 +1,3 @@
-import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
@@ -66,7 +65,7 @@ export default function Page() {
                 title={work.company}
                 subtitle={work.title}
                 href={work.href}
-                badges={work.badges}
+                badges={work.badges as readonly string[] | undefined} // Add this type assertion
                 period={`${work.start} - ${work.end ?? "Present"}`}
                 description={work.description}
               />
