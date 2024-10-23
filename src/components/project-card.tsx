@@ -1,42 +1,37 @@
+'use client';
+
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-import ReactPlayer from 'react-player';
+import dynamic from 'next/dynamic';
 
-type ProjectCardProps = {
+const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
+
+interface Project {
   href: string;
   title: string;
   description: string;
   dates: string;
-  tags: readonly string[];  // Change this line
+  tags?: readonly string[]; // Make tags optional
   image?: string;
   video?: string;
-  links?: readonly {  // Change this line
+  links?: readonly {
     readonly type: string;
     readonly href: string;
     readonly icon: React.ReactNode;
   }[];
-};
+}
 
-export function ProjectCard({
-  href,
-  title,
-  description,
-  dates,
-  tags,
-  image,
-  video,
-  links,
-}: ProjectCardProps) {
+const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   return (
     <Card className="overflow-hidden">
-      <a href={href} target="_blank" rel="noopener noreferrer">
-        {video && (
+      <a href={project.href} target="_blank" rel="noopener noreferrer">
+        {project.video && (
           <div className="relative aspect-video overflow-hidden">
             <ReactPlayer
-              url={video}
+              url={project.video}
               width="100%"
               height="100%"
               controls
@@ -53,11 +48,11 @@ export function ProjectCard({
             />
           </div>
         )}
-        {!video && image && (
+        {!project.video && project.image && (
           <div className="relative aspect-video overflow-hidden">
             <img
-              src={image}
-              alt={title}
+              src={project.image}
+              alt={project.title}
               className="object-cover w-full h-full"
             />
           </div>
@@ -65,22 +60,24 @@ export function ProjectCard({
       </a>
       <CardContent className="p-4">
         <div className="flex justify-between items-start mb-2">
-          <h3 className="text-lg font-semibold">{title}</h3>
-          <span className="text-sm text-gray-500">{dates}</span>
+          <h3 className="text-lg font-semibold">{project.title}</h3>
+          <span className="text-sm text-gray-500">{project.dates}</span>
         </div>
-        <p className="text-sm text-gray-600 mb-4">{description}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {tags.map((tag) => (
-            <Badge key={tag} variant="secondary">
-              {tag}
-            </Badge>
-          ))}
-        </div>
-        {links && links.length > 0 && (
+        <p className="text-sm text-gray-600 mb-4">{project.description}</p>
+        {project.tags && project.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tags.map((tag) => (
+              <Badge key={tag} variant="secondary">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        )}
+        {project.links && project.links.length > 0 && (
           <>
             <Separator className="my-4" />
             <div className="flex gap-4">
-              {links.map((link) => (
+              {project.links.map((link) => (
                 <a
                   key={link.type}
                   href={link.href}
@@ -103,4 +100,6 @@ export function ProjectCard({
       </CardContent>
     </Card>
   );
-}
+};
+
+export default ProjectCard;
