@@ -1,8 +1,8 @@
 "use client";
 
 import { Neighborhood } from "@/lib/streetwheel/data";
-import { mapEmbedUrl } from "@/lib/streetwheel/util";
 import { Dice5, Eye } from "lucide-react";
+import CityMap from "./CityMap";
 import Modal from "./Modal";
 
 interface SpinResultModalProps {
@@ -37,12 +37,10 @@ export default function SpinResultModal({
           </div>
 
           <div className="mt-4 h-40 overflow-hidden rounded-xl border border-neutral-200">
-            <iframe
-              title="preview"
-              src={mapEmbedUrl(neighborhood.lat, neighborhood.lng, 14)}
+            <CityMap
+              neighborhood={neighborhood}
+              zoomed
               className="h-full w-full"
-              style={{ border: 0 }}
-              loading="lazy"
             />
           </div>
 

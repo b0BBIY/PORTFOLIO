@@ -6,6 +6,7 @@ import {
   NEIGHBORHOODS,
 } from "@/lib/streetwheel/data";
 import { isUnlocked, StreetwheelState } from "@/lib/streetwheel/store";
+import { PHOTO_FALLBACK } from "@/lib/streetwheel/util";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 
@@ -154,6 +155,10 @@ export default function ProfilePanel({
                         alt={p.caption}
                         className="aspect-square w-full rounded-lg object-cover"
                         loading="lazy"
+                        onError={(e) => {
+                          if (e.currentTarget.src !== PHOTO_FALLBACK)
+                            e.currentTarget.src = PHOTO_FALLBACK;
+                        }}
                       />
                     ))}
                   </div>

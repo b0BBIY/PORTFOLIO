@@ -334,9 +334,11 @@ export const actions = {
 };
 
 function subscribe(cb: () => void) {
-  hydrate();
   listeners.add(cb);
-  return () => listeners.delete(cb);
+  hydrate();
+  return () => {
+    listeners.delete(cb);
+  };
 }
 
 function getSnapshot() {

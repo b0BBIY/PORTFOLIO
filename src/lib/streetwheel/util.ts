@@ -1,6 +1,16 @@
-export function mapEmbedUrl(lat: number, lng: number, zoom = 15) {
-  return `https://maps.google.com/maps?q=${lat},${lng}&z=${zoom}&output=embed`;
-}
+/** Inline placeholder used when a remote photo can't be loaded. */
+export const PHOTO_FALLBACK =
+  "data:image/svg+xml;utf8," +
+  encodeURIComponent(
+    `<svg xmlns='http://www.w3.org/2000/svg' width='400' height='300'>
+      <defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
+        <stop offset='0' stop-color='#ECE9FB'/><stop offset='1' stop-color='#D8DEF0'/>
+      </linearGradient></defs>
+      <rect width='400' height='300' fill='url(#g)'/>
+      <text x='200' y='155' font-family='sans-serif' font-size='16'
+        fill='#8b8b9c' text-anchor='middle'>photo unavailable offline</text>
+    </svg>`
+  );
 
 export function streetViewEmbedUrl(lat: number, lng: number) {
   return `https://maps.google.com/maps?q=&layer=c&cbll=${lat},${lng}&cbp=11,0,0,0,0&output=svembed`;

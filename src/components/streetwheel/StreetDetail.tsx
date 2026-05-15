@@ -7,9 +7,10 @@ import {
   StreetwheelState,
   unlockTimestamp,
 } from "@/lib/streetwheel/store";
-import { mapEmbedUrl } from "@/lib/streetwheel/util";
+import { mapsLink } from "@/lib/streetwheel/util";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowLeft, Lock, MapPin, Trophy } from "lucide-react";
+import { ArrowLeft, ExternalLink, Lock, MapPin, Trophy } from "lucide-react";
+import CityMap from "./CityMap";
 import PhotoCard from "./PhotoCard";
 
 interface StreetDetailProps {
@@ -84,14 +85,16 @@ function Inner({
         <ArrowLeft size={16} /> Back to the wheel
       </button>
 
-      <div className="h-56 w-full overflow-hidden rounded-2xl border border-neutral-200">
-        <iframe
-          title="hero map"
-          src={mapEmbedUrl(neighborhood.lat, neighborhood.lng, 15)}
-          className="h-full w-full"
-          style={{ border: 0 }}
-          loading="lazy"
-        />
+      <div className="relative h-56 w-full overflow-hidden rounded-2xl border border-neutral-200">
+        <CityMap neighborhood={neighborhood} zoomed className="h-full w-full" />
+        <a
+          href={mapsLink(neighborhood.lat, neighborhood.lng)}
+          target="_blank"
+          rel="noreferrer"
+          className="absolute right-3 top-3 flex items-center gap-1 rounded-full bg-white/95 px-2.5 py-1 text-xs font-semibold text-[#3B82F6] shadow-sm hover:bg-white"
+        >
+          Google Maps <ExternalLink size={12} />
+        </a>
       </div>
 
       <div className="mt-4 flex flex-wrap items-end justify-between gap-3">

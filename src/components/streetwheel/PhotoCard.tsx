@@ -1,7 +1,7 @@
 "use client";
 
 import { actions, Photo, StreetwheelState } from "@/lib/streetwheel/store";
-import { timeAgo } from "@/lib/streetwheel/util";
+import { timeAgo, PHOTO_FALLBACK } from "@/lib/streetwheel/util";
 import { Bookmark, Heart, Lock, MessageCircle, Send } from "lucide-react";
 import { useState } from "react";
 
@@ -36,6 +36,10 @@ export default function PhotoCard({
         alt={photo.caption}
         className="aspect-[4/3] w-full object-cover"
         loading="lazy"
+        onError={(e) => {
+          if (e.currentTarget.src !== PHOTO_FALLBACK)
+            e.currentTarget.src = PHOTO_FALLBACK;
+        }}
       />
       <div className="p-3">
         <div className="flex items-center justify-between">
