@@ -43,7 +43,7 @@ export async function getPost(slug: string) {
   const content = await markdownToHTML(rawContent);
   return {
     source: content,
-    metadata,
+    metadata: metadata as Metadata,
     slug,
   };
 }
