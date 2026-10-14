@@ -4,7 +4,9 @@ import ProjectCard from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import { DATA } from "@/data/resume";
+import { FileTextIcon } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
@@ -28,6 +30,21 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 text={DATA.description}
               />
+              <BlurFade delay={BLUR_FADE_DELAY * 2}>
+                <a
+                  href={DATA.resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={buttonVariants({
+                    variant: "outline",
+                    size: "sm",
+                    className: "mt-3 gap-1.5",
+                  })}
+                >
+                  <FileTextIcon className="size-3.5" />
+                  Download resume
+                </a>
+              </BlurFade>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
               <Avatar className="size-28 border">
@@ -94,6 +111,20 @@ export default function Page() {
               />
             </BlurFade>
           ))}
+        </div>
+      </section>
+      <section id="certifications">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 8.5}>
+            <h2 className="text-xl font-bold">Certifications</h2>
+          </BlurFade>
+          <div className="flex flex-wrap gap-1">
+            {DATA.certifications.map((cert, id) => (
+              <BlurFade key={cert} delay={BLUR_FADE_DELAY * 9 + id * 0.05}>
+                <Badge variant="secondary">{cert}</Badge>
+              </BlurFade>
+            ))}
+          </div>
         </div>
       </section>
       <section id="skills">
