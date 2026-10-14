@@ -23,7 +23,7 @@ export const DATA = {
   description:
     "Customer Success Manager owning a $3.8M book of enterprise SaaS accounts at 96.9% logo retention. I take customers from signed contract through go-live, and use AI to scale the work.",
   summary:
-    "Customer Success Manager at **LeapXpert**, owning a $3.8M book of business across 65 enterprise SaaS accounts at 96.9% logo retention. Four years in technical customer success, taking customers from signed contract through implementation and go-live in regulated, integration-heavy environments. I build the playbooks, documentation, and health workflows that let a customer success function scale, and use AI tools daily to draft, document, and streamline customer work.",
+    "Four years in technical customer success. I'm at my best in regulated, integration-heavy environments, where getting a customer live takes real coordination across IT, compliance and the business. I build the playbooks and workflows that make a customer success team scale.",
   avatarUrl: "/face.jpg",
   skills: [
     "Customer Onboarding",
@@ -98,7 +98,7 @@ export const DATA = {
       start: "June 2025",
       end: "Present",
       description:
-        "Own a $3.8M book of business across 65 enterprise SaaS accounts, leading regulated financial services customers from signed contract through onboarding, implementation, and go-live, then owning adoption, stakeholder alignment, and escalations. Maintain 96.9% logo retention by surfacing adoption blockers, product gaps, and renewal risks early and driving them to resolution with Product and Engineering. Lead technical implementations of SSO, bring-your-own-key encryption, TLS archiving, retention controls, and IP whitelisting. Built success plans, onboarding touchpoints, QBR materials, and health-score-triggered follow-up workflows in Planhat. Use Claude Code, Claude Cowork, ChatGPT, and n8n daily to automate account documentation, turn Gong calls into follow-ups, and build onboarding materials.",
+        "I manage 65 enterprise SaaS accounts ($3.8M) for regulated financial services firms, with 96.9% logo retention. I take each customer from signed contract through technical setup and go-live, then stay their main point of contact for adoption, escalations and renewals. I built the Planhat playbooks and health-score alerts I run my book on, and use AI tools to automate the routine work.",
       badges: [],
     },
     {
